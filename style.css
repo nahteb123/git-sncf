@@ -1,0 +1,327 @@
+*{
+    font-family: Arial, Helvetica, sans-serif;
+    word-spacing: 5px;
+    line-height: 40px;
+}
+h1 {
+    background-color: #208BEE;
+    text-align: center;
+    color: #F5F5F5;
+    padding: 1%;
+}
+section{
+    background-color: #D9D9D9;
+    padding-bottom: 5%;
+}
+header{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    background-color: #F5F5F5 ;
+}
+header img {
+    margin-left:2%;
+    padding: 1%;
+    width: 10%;
+ }
+.lien_retour {
+    background-color: #208BEE;
+    margin-left: 60%;
+    padding: 2%;
+    color: #F5F5F5;
+
+}
+/*.test{
+    display: flex;
+    justify-content: center;
+    background-image: url("phototrain.png");
+    height: 1500px;  non fonctionnel car non responsive
+
+}*/
+.img_train{
+    width: 20%;
+    height: 20%;
+}
+.container{
+    background-color: #FFFFFF;
+    border-radius: 5%;
+
+}
+footer{
+    background-color:#208BEE ;/* a modif*/
+}
+
+.couleur_atm_1{
+    background-color: #208BEE;
+}
+.couleur_atm_2{
+    background-color:#175EA0 ;
+}
+.couleur_atm_3{
+    background-color: #29CA4D ;
+}
+
+.couleur_atm_4{
+    background-color: #337329 ;
+}
+.departs_atm{
+    background-color: #636363;
+    text-align: left;
+    padding-left: 1%;
+}
+.arrives_atm{
+    background-color: #636363;
+    text-align: left;
+    padding-left: 1%;
+}
+h2 {
+    margin: 1%;
+    padding: 0%;
+}
+.iteneraire_text{
+    padding: 1%;
+}
+.test_sec{
+    padding: 1%;
+    
+}
+
+tr:nth-child(1){
+    background-color: #FF6565;
+    /*#636363*/
+}
+tr:nth-child(n+2){
+    background-color: white;
+}
+/* tr:nth-child(odd){
+    background-color: rgb(0, 0, 0);
+} */
+.atm_cli{
+    display: flex;
+    justify-content: center;
+}
+.titre_atm{
+    width: 100%;
+    padding: 3%;
+    margin-top: 0%;
+
+}
+
+.container2 {
+    width: 50%;
+    height: 30%;
+    background-color:#5274d1 ;
+    border-radius: 20px;
+    margin: 2%;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 3%;
+    padding-top: 0%
+}
+.lien_atm_1{
+    margin-top: 5%;
+    margin-right: 10%;
+    padding: 5%;
+    background-color:#2d9e0e ;
+    color: aliceblue;
+    border: #000000 solid;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+.lien_atm_2{
+    margin-top: 5%;
+    margin-left: 10%;
+    padding: 5%;
+    background-color:#2d9e0e;
+    color: aliceblue;
+    border: #000000 solid;
+    line-height: 20px;
+    display: flex;
+    align-items: center;
+}
+.body_test{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 0%;
+   /*background-color: #636363;*/
+}
+.page{
+    display: none;
+}
+
+.page-num{
+    border: 1px solid blue;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    padding: 10px; /* a modifier*/
+}
+
+.active{
+    color:#000000 ;
+    z-index: 1;
+}
+
+.en_tete{
+    display: flex;
+    justify-content: space-between;
+    
+}
+.reservation{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #0C131F;
+
+}
+label {
+    color: #FFFFFF;
+}
+.button{
+   background-color: #2D9E0E; 
+   color: #FFFFFF;
+}
+.titre_connexion_client{
+    background-color: #414141;
+}
+.formulaire_connexion{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #208BEE;
+    margin:5% 10%;
+    margin-bottom: 10%;
+
+}
+.info_connexion_formulaire{
+    width: 90%;
+    margin: 1% 0%;
+}
+.button_valider{
+    margin: 1%; 
+    background-color: #FFFFFF; 
+    border-radius: 20% ;
+}
+.button_valider2{
+    margin: 1%; 
+    background-color: #FFFFFF; 
+    border-radius: 20% ;
+}
+.button_valider:hover{
+    background-color: #29CA4D;
+}
+.button_valider2:hover{
+    background-color: #29CA4D;
+}
+.inscription_client_et_validation{
+    width: 100%;
+    display: flex;
+    justify-content: space-around;
+}
+.lien_inscription{
+    background-color: #FFFFFF;
+    margin: 1%;
+    padding: 1%;
+    border: #4e4e4e 2px solid;
+    text-decoration: none;
+    color: #000000;
+    border-radius: 20%;
+}
+.lien_inscription:hover{
+    background-color: #2fe5fd
+}
+.container_garage{
+    display: flex;
+    justify-content: center;
+    
+}
+.img-slider{
+    position: relative;
+    width: 100%;
+    height: 500px;
+    margin:10px;
+   /* overflow:hidden*/
+}
+
+
+.img-slider .slide{
+   
+   position: absolute;
+   width: 100%;
+}
+
+
+
+.img-slider .slide img{
+    z-index: 1;
+    width: 100%;
+ }
+.img-slider .slide .info{
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    padding: 30px 0px;
+    background-color: #FFFFFF;
+    border-radius: 20%;
+    transform: translateX(-50%);
+    display: flex;
+    align-items: flex-end;
+    width: 70%;
+    justify-content: center;
+}
+
+
+.navigation{
+    z-index: 2;
+    position: fixed;
+    display: flex;
+    top: 43%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.btn{
+    background-color:#8d8989;
+    margin: 10px;
+    padding: 10px;
+    font-size: 25px;
+}
+.validation_formulaire_accueil{
+    height: 50px;
+    margin-right: 4%;
+}
+.conteneur_accueil{
+    border: solid #8d8989;
+    display: flex;
+    flex-direction: column;
+    margin: 0% 5%;
+    padding: 3%;
+}
+.titre_accueil{
+    font-size: 20px;
+}
+.input_accueil {
+    border: solid;
+}
+.validation_inscription_client {
+    display: flex;
+    justify-content: flex-end;
+    width: 100%;
+    margin-right: 10%;
+}
+.bouton_inscription {
+    background-color: #FFFFFF;
+    border: solid 2px #000000;
+    border-radius: 15px;
+    color: #000000;
+    margin: 1%;
+    text-decoration: none;
+}
+.validation_connexion_client{
+    display: flex;
+    justify-content: space-around;
+    width: 100%;
+}
