@@ -18,12 +18,12 @@
     <section class="atm_cli">
      <table border 1 width =100% id="resourcesTab8"> 
             <tr>
-				<th>id_train</th>
-				<th>nom_train</th>
-				<th>capacité_train</th>
-				<th>nombre_reservation</th>
-                <th>id_station</th>
-                <th>id_type_train</th>
+				<th>Id Train</th>
+				<th>Nom Train</th>
+				<th>Capacité Train</th>
+				<th>Nombre Reservation</th>
+                <th>Id station</th>
+                <th>Type Train</th>
                 
                
 			</tr>
@@ -38,8 +38,8 @@
         var variableJS = "<?php echo $_POST["detail_train"]; ?>";
          console.log(variableJS);
         localStorage.setItem('variableJS',variableJS );
-        document.getElementById("resourcesTab8").addEventListener("load", test0());
-        setInterval(function() {test0()}, 10000);
+        document.getElementById("resourcesTab8").addEventListener("load", detail_train());
+        setInterval(function() {detail_train()}, 1000);
     </script>
 </body>
 </html>

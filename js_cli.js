@@ -1,4 +1,4 @@
-function test(){
+function cli_depart(){
     $.ajax({
       url: "get_data_cli.php",
       success : function(result,status){
@@ -8,8 +8,8 @@ function test(){
        let monTableau = document.getElementById("resourcesTab3");
        $('#resourcesTab3 > tr').remove();
         for(let value in NosDatas){
-          console.log(NosDatas);
-          console.log(value);
+        //  console.log(NosDatas);
+          //console.log(value);
             let monTr = document.createElement("tr");
             //console.log("la valeur: " + NosDatas[value]);
             
@@ -39,7 +39,6 @@ function test(){
            
 
             monBouton.addEventListener("click",(ev) => {
-              console.log("hello")
               modifTrajet(idAtm);
              })
 
@@ -70,7 +69,7 @@ function test(){
 
 }
 
-function test2(){
+function cli_arrivee(){
     $.ajax({
       url: "get_data_cli_arrivee.php",
       success : function(result,status){
@@ -124,7 +123,7 @@ function test2(){
 
 }
 
-function test4(){
+function incident(){
   $.ajax({
     url: "getdataincident.php",
     success : function(result,status){
@@ -138,9 +137,9 @@ function test4(){
           let monTr = document.createElement("tr");
           //console.log("la valeur: " + NosDatas[value]);
           
-          let id_incident = NosDatas[value].ID_incidient;
+          let id_incidient = NosDatas[value].ID_incidient;
           let monTd = document.createElement("td");
-          monTd.innerHTML = id_incident;
+          monTd.innerHTML = id_incidient;
           
           let libelle= NosDatas[value].libelle_incident;
           let monTd2 = document.createElement("td");
@@ -154,9 +153,9 @@ function test4(){
           let monTd4 = document.createElement("td");
           monTd4.innerHTML = incident;
         
-          let type_incident =NosDatas[value].ID_type_incident;
+          let libelle_type_incident =NosDatas[value].libelle_type_incident;
           let monTd5 = document.createElement("td");
-          monTd5.innerHTML = type_incident;
+          monTd5.innerHTML = libelle_type_incident;
 
 
           
@@ -180,7 +179,7 @@ function test4(){
   }) 
 
 }
-function test5(){
+function garage(){
   $.ajax({
     url: "getdatagarage.php",
     success : function(result,status){
@@ -200,14 +199,19 @@ function test5(){
       let idAtm = gare[value].ID_station;
       monTd.innerHTML = idAtm;
       
-      let timer= gare[value].nom_station;
+      let nom_station= gare[value].nom_station;
       let monTd2 = document.createElement("td");
-      monTd2.innerHTML = timer;
+      monTd2.innerHTML = nom_station;
+
+      let ID_train= gare[value].ID_train;
+      let monTd3 = document.createElement("td");
+      monTd3.innerHTML = ID_train;
 
   
       monTableau.appendChild(monTr)
       monTr.appendChild(monTd);
       monTr.appendChild(monTd2);
+      monTr.appendChild(monTd3);
       
       
   }
@@ -223,7 +227,7 @@ function test5(){
 }
 
 
-function test6(){
+function reservation(){
   $.ajax({
     url: "getreservation.php",
     success : function(result,status){

@@ -22,12 +22,12 @@ echo $_SESSION['login'];
 
 <table border 1 width =100% id="resourcesTab3"> 
             <tr>
-				<th>id_atm</th>
-				<th>destination</th>
-				<th>quai</th>
-				<th>heure départ</th>
-                <th>nom train</th>
-                <th> Réserver</th>
+				<th>N° Train</th>
+				<th>Destination</th>
+				<th>Quai</th>
+				<th>Heure Départ</th>
+                <th>Nom Train</th>
+                <th>Réserver</th>
                
 			</tr>
 
@@ -37,8 +37,8 @@ echo $_SESSION['login'];
         
     </main>
     <script>
-        document.getElementById("resourcesTab3").addEventListener("load", test());
-        setInterval(function() {test()}, 10000);
+        document.getElementById("resourcesTab3").addEventListener("load", cli_depart());
+        setInterval(function() {cli_depart()}, 1000);
     </script>
 </body>
 </html>

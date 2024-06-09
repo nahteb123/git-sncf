@@ -19,10 +19,10 @@ session_start();
     if (isset($_GET['id']) && (isset($_POST['validation']))) {
         $id = $_GET['id'];
         //connection à la base de donnés sql
-        $nom_serveur = "localhost";
-        $utilisateur = "root";
-        $mot_de_passe ="";
-        $nom_base_données ="sncf" ;
+        $nom_serveur = "mysql-ethanbermond.alwaysdata.net";
+        $utilisateur = "340115";
+        $mot_de_passe ="N@hteb2004";
+        $nom_base_données ="ethanbermond_3" ;
         $lien = mysqli_connect($nom_serveur, $utilisateur, $mot_de_passe, $nom_base_données);
         //Requete sql
         $query = "DELETE FROM trajet WHERE ID_trajet = $id"; 

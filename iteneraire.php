@@ -35,9 +35,9 @@
         var variableJS2 = "<?php echo $_POST["arrivee"]; ?>";
         localStorage.setItem('variableJS1',variableJS1 );
         localStorage.setItem('variableJS2',variableJS2 );
-        document.getElementById("resourcesTab9").addEventListener("load", test3());
+        document.getElementById("resourcesTab9").addEventListener("load", iteneraire());
         
-        setInterval(function() {test3()}, 10000);
+        setInterval(function() {iteneraire()}, 1000);
     </script>
 
 </body>

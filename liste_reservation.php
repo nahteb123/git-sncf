@@ -19,9 +19,9 @@
             <div class="container">      
         <table border 1 width =100% id="resourcesTab8"> 
             <tr>
-				<th>Id_train</th>
-				<th>Id_client</th>
-                <th>Id_client</th>
+				<th>Id Train</th>
+				<th>Id Client</th>
+                <th>Supprimer</th>
 			</tr>
 
         </table>
@@ -34,8 +34,8 @@
          var variableJSreserv = "<?php echo $_POST["liste_reservation"]; ?>";
          console.log(variableJSreserv);
         localStorage.setItem('variableJSreserv',variableJSreserv );
-          document.getElementById("resourcesTab8").addEventListener("load", test6());
-        setInterval(function() {test6()}, 10000);
+          document.getElementById("resourcesTab8").addEventListener("load", reservation());
+        setInterval(function() {reservation()}, 1000);
     </script>
 </body>
 </html>

@@ -22,8 +22,8 @@
 				<th>ID incident</th>
 				<th>Libellé incident</th>
 				<th>Description</th>
-				<th>Date_incident</th>
-                <th>ID_type_incident</th>
+				<th>Date Incident</th>
+                <th>ID Type Incident</th>
 			</tr>
 
         </table>
@@ -33,8 +33,8 @@
     <footer>
     </footer>
     <script>
-          document.getElementById("resourcesTab6").addEventListener("load", test4());
-        setInterval(function() {test4()}, 10000);
+          document.getElementById("resourcesTab6").addEventListener("load", incident());
+        setInterval(function() {incident()}, 1000000000);
     </script>
 </body>
 </html>

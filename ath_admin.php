@@ -13,7 +13,7 @@
 <body>
     <main>
     <a class="ajout_traj" href="./ajout_traj.php">Ajout Trajet</a>
-        <h1 class="departs_atm"> Départs </h1>
+        <h1 class="departs_atm"> Trajet de la gare <?php echo $_POST["depart"]; ?> à la gare <?php echo $_POST["arrivee"]; ?> </h1>
         <section class="atm_cli2">
 
 
@@ -22,35 +22,27 @@
          
         <table border 1  id="resourcesTab"> 
             <tr>
-				<th>Id_trajet</th>
+				<th>Id Trajet</th>
 				<th>Date Depart</th>
 				<th>Date Arrivee</th>
 				<th>Heure Depart</th>
-                <th>heure Arrivée</th>
-                <th>nom train</th>
-                <th>nom gare</th>
+                <th>Heure Arrivée</th>
+                <th>Nom train</th>
+                <th>Quai</th>
+                <th>Quai</th>
 			</tr>
 
         </table>
-        <h1 class="departs_atm"> Arrivés </h1>
-        <table border 1  id="resourcesTab2"> 
-            <tr>
-                <th>Id_trajet</th>
-				<th>Date Depart</th>
-				<th>Date Arrivee</th>
-				<th>Heure Depart</th>
-                <th>heure Arrivée</th>
-                <th>nom train</th>
-                <th>nom gare</th>
-			</tr>
  </section>
         </table>
     </main>
     <script>
-        document.getElementById("resourcesTab").addEventListener("load", test());
-        document.getElementById("resourcesTab2").addEventListener("load", test2());
-        setInterval(function() {test()}, 1000);
-        setInterval(function() {test2()}, 1000);
+         var variableJS1 = "<?php echo $_POST["depart"]; ?>";
+        var variableJS2 = "<?php echo $_POST["arrivee"]; ?>";
+        localStorage.setItem('variableJS1',variableJS1 );
+        localStorage.setItem('variableJS2',variableJS2 );
+        document.getElementById("resourcesTab").addEventListener("load", DataDepart());
+        setInterval(function() {DataDepart()}, 10000);
     </script>
 </body>
 </html>

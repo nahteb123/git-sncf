@@ -22,8 +22,9 @@
             <div class="container_garage">
             <table border 1  id="resourcesTab7"> 
             <tr>
-				<th>Id_station</th>
-				<th>nom_station</th>
+				<th>Id Station</th>
+				<th>Nom Station</th>
+                <th>Id Train </th>
 			</tr>
             </div>
         </section>
@@ -34,8 +35,8 @@
          var variableJS = "<?php echo $_POST["garage"]; ?>";
          console.log(variableJS);
         localStorage.setItem('variableJS',variableJS );
-          document.getElementById("resourcesTab7").addEventListener("load", test5());
-        setInterval(function() {test5()}, 1000);
+          document.getElementById("resourcesTab7").addEventListener("load", garage());
+        setInterval(function() {garage()}, 1000);
     </script>
 </body>
 </html>

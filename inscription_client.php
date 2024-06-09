@@ -1,23 +1,33 @@
 <?php 
 session_start() ;
 if(isset($_POST['boutton-valider'])){ 
-    if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['Nom']) && isset($_POST['Prenom'])) {  // les issests servent à verifier que l'utilisateur à bien rempli un login, un mot de passe et qu'il a bien valider ceci
-        // donnes du formulaire mise en variable
+    if(isset($_POST['email']) && isset($_POST['mdp']) && isset($_POST['Nom']) && isset($_POST['Prenom'])) {  
         $email = $_POST['email'] ;
         $mdp = $_POST['mdp'] ;
         $nom = $_POST['Nom'] ;
         $prenom = $_POST['Prenom'] ;
         $erreur = "" ;
+        
         //connection à la base de donnés sql
-        $nom_serveur = "localhost";
-        $utilisateur = "root";
-        $mot_de_passe ="";
-        $nom_base_données ="sncf2" ;
-        $passwordHash = hash("sha256",$mdp);
+        $nom_serveur = "mysql-ethanbermond.alwaysdata.net";
+        $utilisateur = "340115";
+        $mot_de_passe ="N@hteb2004";
+        $nom_base_données ="ethanbermond_3" ;
+        $sel ="je_suis_un_sel";
+
+        $mdp_sel= $mdp .$sel;
+        $passwordHash = hash("sha256",$mdp_sel); //on hache le mot de passe 
+
         $lien = mysqli_connect($nom_serveur , $utilisateur ,$mot_de_passe , $nom_base_données);
-        //Requete sql
-        $req = mysqli_query($lien , "INSERT INTO client VALUES( '','$nom', '$prenom', '$email','$passwordHash'  ) ") ; //on verifie si le login et le mot de passe donnés existent bien dans la base de donnés
-        header("Location:connexion_client.php") ;
+        $regex = '/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[^\da-zA-Z]).{12,}$/'; //verifie que le mot de passe a au minimum 12 caractère donc une minuscule, un majuscule, un chiffre et un caractère spécial.
+        if (preg_match($regex, $mdp)) {
+            $req = mysqli_query($lien , "INSERT INTO client VALUES( '','$nom', '$prenom', '$email','$passwordHash'  ) ") ; //on insere les donnes du formulaire dans la bdd 
+            header("Location:index.php") ;
+        } else {
+            $erreur = "Le mot de passe doit avoir au minimum 12 caractère donc une minuscule, un majuscule, un chiffre et un caractère spécial !";
+        }
+       
+       
     }
   }
 ?>
@@ -34,9 +44,11 @@ if(isset($_POST['boutton-valider'])){
     <section>
         <h1 class="titre_connexion_client"> Inscription</h1>
         <?php 
-       
+        if(isset($erreur)){
+            echo "<p class= 'Erreur'>".$erreur."</p>"  ;// permet de faire l'affichage de l'erreur si elle se produit
+        }
         ?>
-        <form action="" method="POST" class="formulaire_connexion"> <!-- Dans ce formulaire, on demande à l'utilisateur son login et son mot de passe--->
+        <form action="" method="POST" class="formulaire_connexion"> 
             <label>E_mail</label>
             <input type="text" name="email" class="info_connexion_formulaire">
             <label >Mot de Passe</label>
@@ -46,6 +58,7 @@ if(isset($_POST['boutton-valider'])){
             <label>Prenom</label>
             <input type="text" name="Prenom" class="info_connexion_formulaire">
             <div class="validation_inscription_client">
+            <a class="bouton_inscription" href="./index.php">Retour a la page de connexion</a>
                 <input type="submit" value="Valider" name="boutton-valider" class="button_valider2">
             </div>
             

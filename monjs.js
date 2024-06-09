@@ -1,89 +1,51 @@
-function test3(){
-  console.log("test");
-  $.ajax({
-    url: "getdataiteneraire.php",
-    success : function(result,status){
-      let NosDatas = JSON.parse(result);
-      console.log(JSON.parse(result));
-      const variableJS1 = localStorage.getItem('variableJS1');
-      const variableJS2 = localStorage.getItem('variableJS2');
-      const trajet = NosDatas.filter(avoir => avoir.id_gare_depart === variableJS1);
-      let monTableau = document.getElementById("resourcesTab9");
-      $('#resourcesTab9 > tr').remove();
-     let nbBouton = 0;
-      for(let value in trajet){
-        let monTr = document.createElement("tr");
-          
-          let monTd = document.createElement("td");
-          let idtrajet = trajet[value].id_trajet;
-          monTd.innerHTML = idtrajet;
-          let gare_depart= trajet[value].id_gare_depart;
-          let monTd2 = document.createElement("td");
-          monTd2.innerHTML = gare_depart;
-          let gare_arrivee= trajet[value].id_gare_arrivee;
-          let monTd3 = document.createElement("td");
-          monTd3.innerHTML = gare_arrivee;
-
-          monTableau.appendChild(monTr)
-          monTr.appendChild(monTd);
-          monTr.appendChild(monTd2);
-          monTr.appendChild(monTd3);
-
-        
-      }
-
-
-    },
-    error :function(result,status,err){
-        console.log("N'apelle pas le fichier getDataarrivee.php");
-    }
-  }) 
-}
-
-
-
-function test(){
+function DataDepart(){
     $.ajax({
       url: "getData.php",
       success : function(result,status){
-        
         let NosDatas = JSON.parse(result);
-       console.log(JSON.parse(result));
+        console.log(JSON.parse(result));
+        const variableJS1 = localStorage.getItem('variableJS1');
+        const variableJS2 = localStorage.getItem('variableJS2');
+        const trajet = NosDatas.filter(gare => gare.nom_gare_depart === variableJS1 && gare.nom_gare_arrivee === variableJS2);
+
+        console.log(trajet);
        let monTableau = document.getElementById("resourcesTab");
        $('#resourcesTab > tr').remove();
-       let nbBouton = 0;
        for(let value in NosDatas){
-        console.log(NosDatas);
-        console.log(value);
           let monTr = document.createElement("tr");
           //console.log("la valeur: " + NosDatas[value]);
           let monTd = document.createElement("td");
-          let idAtm = NosDatas[value].ID_trajet;
+          let idAtm = trajet[value].ID_trajet;
           monTd.innerHTML = idAtm;
  
-          let Date_Depart= NosDatas[value].date_depart;
+          let Date_Depart= trajet[value].date_depart;
           let monTd2 = document.createElement("td");
           monTd2.innerHTML = Date_Depart;
          
-          let Date_Arrivee= NosDatas[value].date_arrivee;
+          let Date_Arrivee= trajet[value].date_arrivee;
           let monTd3 = document.createElement("td");
           monTd3.innerHTML = Date_Arrivee;
         
-          let Heure_depart= NosDatas[value].heure_depart;
+          let Heure_depart= trajet[value].heure_depart;
           let monTd4 = document.createElement("td");
           monTd4.innerHTML = Heure_depart;
      
-          let Heure_arrivee =NosDatas[value].heure_arrivee;
+          let Heure_arrivee =trajet[value].heure_arrivee;
           let monTd5 = document.createElement("td");
           monTd5.innerHTML = Heure_arrivee;
         
-          let NomTrain =NosDatas[value].id_train;
+          let NomTrain =trajet[value].id_train;
           let monTd6 = document.createElement("td");
           monTd6.innerHTML = NomTrain;
           
-          let NomGare =NosDatas[value].nom_gare;
+          let NomGareDepart =trajet[value].nom_gare_depart;
           let monTd7 = document.createElement("td");
-          monTd7.innerHTML = NomGare;
+          monTd7.innerHTML = NomGareDepart;
+
+          let NomGareArrivee =trajet[value].nom_gare_arrivee;
+          let monTd8 = document.createElement("td");
+          monTd8.innerHTML = NomGareArrivee;
+          
         
 
           monTableau.appendChild(monTr)
@@ -94,6 +56,7 @@ function test(){
           monTr.appendChild(monTd5);
           monTr.appendChild(monTd6);
           monTr.appendChild(monTd7);
+          monTr.appendChild(monTd8);
         }
         //addEventListener()
 
@@ -104,7 +67,7 @@ function test(){
     }) 
 }
 
-function test0(){
+function detail_train(){
   $.ajax({
     url: "getdatatrain.php",
     success : function(result,status){
@@ -117,7 +80,7 @@ function test0(){
      let monTableau = document.getElementById("resourcesTab8");
      $('#resourcesTab8> tr').remove();
       for(let value in train){
-          
+        
           let monTr = document.createElement("tr");
           console.log("la valeur: " + NosDatas[value]);
           
@@ -137,13 +100,13 @@ function test0(){
           let monTd4 = document.createElement("td");
           monTd4.innerHTML = nombre_reservation;
 
-          let id_station =train[value].ID_station;
+          let nom_station =train[value].nom_station;
           let monTd5 = document.createElement("td");
-          monTd5.innerHTML = id_station;
+          monTd5.innerHTML = nom_station;
 
-          let ID_type_train =train[value].ID_type_train;
+          let libelle_type_train =train[value].libelle_type_train;
           let monTd6 = document.createElement("td");
-          monTd6.innerHTML = ID_type_train;
+          monTd6.innerHTML = libelle_type_train;
 
         
           
@@ -165,59 +128,7 @@ function test0(){
     }
   }) 
 }
-function test2(){
-  $.ajax({
-    url: "getDataarrivee.php",
-    success : function(result,status){
-      let NosDatas = JSON.parse(result);
-      console.log(JSON.parse(result));
-      let monTableau = document.getElementById("resourcesTab2");
-      $('#resourcesTab2 > tr').remove();
-     let nbBouton = 0;
-      for(let value in NosDatas){
-        let monTr = document.createElement("tr");
-          
-          let monTd = document.createElement("td");
-          let idAtm = NosDatas[value].ID_trajet;
-          monTd.innerHTML = idAtm;
-          let Date_Depart= NosDatas[value].date_depart;
-          let monTd2 = document.createElement("td");
-          monTd2.innerHTML = Date_Depart;
-          let Date_Arrivee= NosDatas[value].date_arrivee;
-          let monTd3 = document.createElement("td");
-          monTd3.innerHTML = Date_Arrivee;
-          let Heure_depart= NosDatas[value].heure_depart;
-          let monTd4 = document.createElement("td");
-          monTd4.innerHTML = Heure_depart;
-          let Heure_arrivee =NosDatas[value].heure_arrivee;
-          let monTd5 = document.createElement("td");
-          monTd5.innerHTML = Heure_arrivee;
-          let NomTrain =NosDatas[value].id_train;
-          let monTd6 = document.createElement("td");
-          monTd6.innerHTML = NomTrain;
-          let NomGare =NosDatas[value].nom_gare;
-          let monTd7 = document.createElement("td");
-          monTd7.innerHTML = NomGare;
 
-          monTableau.appendChild(monTr)
-          monTr.appendChild(monTd);
-          monTr.appendChild(monTd2);
-          monTr.appendChild(monTd3);
-          monTr.appendChild(monTd4);
-          monTr.appendChild(monTd5);
-          monTr.appendChild(monTd6);
-          monTr.appendChild(monTd7);
-
-        
-      }
-
-
-    },
-    error :function(result,status,err){
-        console.log("N'apelle pas le fichier getDataarrivee.php");
-    }
-  }) 
-}
 
 function modifTrajet(idAtm) {
   console.log(idAtm);

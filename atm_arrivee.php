@@ -16,11 +16,11 @@
        
 <table border 1 width =100% id="resourcesTab4"> 
             <tr>
-				<th>id_atm</th>
-				<th>destination</th>
-				<th>quai</th>
-				<th>heure départ</th>
-                <th>nom train</th>
+                <th>N° Train</th>
+				<th>Destination</th>
+				<th>Quai</th>
+				<th>Heure Départ</th>
+                <th>Nom Train</th>
                
 			</tr>
 
@@ -32,8 +32,8 @@
     
     </main>
     <script>
-          document.getElementById("resourcesTab4").addEventListener("load", test2());
-        setInterval(function() {test2()}, 1000);
+          document.getElementById("resourcesTab4").addEventListener("load", cli_arrivee());
+        setInterval(function() {cli_arrivee()}, 1000);
     </script>
 </body>
 </html>

@@ -1,10 +1,8 @@
 <?php
-//$nom1 =$_GET['id1'];
-//$nom2=$_GET['id2'];
-$nom_serveur = "localhost";
-$utilisateur = "root";
-$mot_de_passe ="";
-$nom_base_données ="sncf2" ;
+$nom_serveur = "mysql-ethanbermond.alwaysdata.net";
+$utilisateur = "340115";
+$mot_de_passe ="N@hteb2004";
+$nom_base_données ="ethanbermond_3" ;
 $lien = mysqli_connect($nom_serveur , $utilisateur ,$mot_de_passe , $nom_base_données);
 $query= "SELECT id_trajet , id_gare_depart, id_gare_arrivee FROM avoir
   

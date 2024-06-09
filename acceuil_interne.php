@@ -20,7 +20,7 @@
         <div class="img-slider">
             <div class="slide active">
                 <img src="phototrain.png">
-                <form class="info" action="./iteneraire.php" method="POST">  
+                <form class="info" action="./ath_admin.php" method="POST">  
                     <div class="conteneur_accueil">
                         <h2 class="titre_accueil">Rechercher une gare de départ</h2>
                         <input class="input_accueil" type="text" name="depart" id ="depart">  
